@@ -12,7 +12,8 @@
         >
           <div class="card w-100">
             <div class="card-body">
-              <h5 class="card-title">{{ userName }}</h5>
+              <h5 class="card-title">Name: {{ userName }}</h5>
+              <h6>Email: {{userEmail}}</h6>
               <p>{{ userAlbum.title }}</p>
 
               <!-- <button class="btn btn-success" @click="goToAlbumPhotos(userAlbum.id)">
@@ -47,15 +48,20 @@ export default {
       id: "",
       userAlbums: [], //all albums of user
       users: '', //all users
-      // userName: "", //the selcted user name
+      userName: "", //the selcted user name
+      userEmail:''
     };
   },
   created() {
     this.id = this.$route.params.userid; //that perporty will catch the id of the path
 
     this.getUserAlbums(this.id);
-    // const users = this.$store.state.users.data;
-    // this.userName = this.users[this.id-1].name;
+    this.users = this.$store.state.users.data;
+    this.userName = this.users[this.id-1].name;
+    this.userEmail = this.users[this.id-1].email
+    console.log(this.users);
+
+
 
     
    
