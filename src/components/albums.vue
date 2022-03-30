@@ -59,7 +59,7 @@ export default {
     this.users = this.$store.state.users.data;
     this.userName = this.users[this.id-1].name;
     this.userEmail = this.users[this.id-1].email
-    console.log(this.users);
+    
 
 
 
